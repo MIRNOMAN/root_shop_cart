@@ -117,7 +117,7 @@ const Navbar = () => {
 
     return (
         <AppBar position="static" >
-            <Container maxWidth="xl" className='bg-slate-200 shadow-none'>
+            <Container maxWidth="xl" className='bg-[#F4F3F4] shadow-none'>
                 <Toolbar disableGutters >
                     <Box sx={{
                         display: { xs: 'none', md: 'flex' },
@@ -133,7 +133,7 @@ const Navbar = () => {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+                            color="#111111"
                         >
                             <MenuIcon />
                         </IconButton>

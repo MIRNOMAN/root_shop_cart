@@ -12,9 +12,9 @@ body {
     @apply w-full px-8 lg:p-0 lg:w-3/4 m-auto;
   }
   /*   Span and a tags */
-  .span {
+  /* .span {
     @apply text-[12px] font-semibold text-primary-gray;
-  }
+  } */
   /* .a {
     @apply text-[15px] font-[400] text-red-gray;
   } */
