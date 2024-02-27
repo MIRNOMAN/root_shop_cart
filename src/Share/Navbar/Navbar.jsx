@@ -3,29 +3,93 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
 import { useState } from 'react';
 import logo from "../../assets/common/logo.png"
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import styled from '@emotion/styled';
 import { Badge } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { NavLink } from 'react-router-dom';
 
 
 const Navbar = () => {
-    const pages = ['Home', 'Shop', 'Blog', 'About', 'Services', 'Contact'];
-    const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
-
+    
+    const settings = <>
+    <li><NavLink to="/profile">Profile</NavLink></li>
+    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+    <li><NavLink to="/logout">Logout</NavLink></li>
+    </>
 
     const [anchorElNav, setAnchorElNav] = useState(null);
     const [anchorElUser, setAnchorElUser] = useState(null);
+
+    const navlinks = <>
+     <li>
+     <NavLink
+  to="/"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "#009688" : ""
+  }
+>
+  Home
+</NavLink>
+     </li>
+     <li>
+     <NavLink
+  to="/shop"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : "#009688"
+  }
+>
+  Shop
+</NavLink>
+     </li>
+     <li>
+     <NavLink
+  to="/blog"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : "#009688"
+  }
+>
+  Blog
+</NavLink>
+     </li>
+     <li>
+     <NavLink
+  to="/about"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : "#009688"
+  }
+>
+  About
+</NavLink>
+     </li>
+     <li>
+     <NavLink
+  to="/services"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : "#009688"
+  }
+>
+  Services
+</NavLink>
+     </li>
+     <li>
+     <NavLink
+  to="/contacts"
+  className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : "#009688"
+  }
+>
+  Contacts
+</NavLink>
+     </li>
+    </>
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -92,13 +156,10 @@ const Navbar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page}
-                                    onClick={handleCloseNavMenu}
-                                >
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <ul className='list-none p-4 space-y-3'>
+                            {navlinks}
+                            </ul>
+                          
 
 
                         </Menu>
@@ -111,15 +172,10 @@ const Navbar = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
-                            <Button
-                                key={page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: '#212121', display: 'block' }}
-                            >
-                                {page}
-                            </Button>
-                        ))}
+                       <ul className='list-none flex gap-4 text-black'>
+                       {navlinks}
+                       </ul>
+                       
                     </Box>
 
 
@@ -167,13 +223,10 @@ const Navbar = () => {
                             open={Boolean(anchorElUser)}
                             onClose={handleCloseUserMenu}
                         >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting}
-                                    onClick={handleCloseUserMenu}
-                                >
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
+                            <ul className='list-none p-4 space-y-3'>
+                            {settings}
+                            </ul>
+                           
                         </Menu>
                     </Box>
                 </Toolbar>
