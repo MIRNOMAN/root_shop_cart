@@ -33,8 +33,8 @@ const Bannar = () => {
 
                        <div className="lg:h-1/2 mt-2 h-[200px]">
                        <img className="relative" src={bannar3} alt="bannar image" />
-                     <div className="absolute lg:-mt-36 -mt-44 lg:pl-52 pl-44 p-5">
-                           <h1 className="text-2xl font-medium">Wooden Water Bottles </h1>
+                     <div className="absolute lg:-mt-40 -mt-44 lg:pl-48 pl-44 p-5">
+                           <h1 className="text-3xl font-medium">Mauve Leather Bag  </h1>
                            <span className=" uppercase mt-2 font-medium">Up to 60% off</span>
                            <div className="">
                            

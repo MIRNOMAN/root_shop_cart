@@ -1,6 +1,10 @@
 import Bannar from "../../Components/Bannar/Bannar"
 import Hero from "../../Components/Hero/Hero"
-import Products from "../../Components/products/Products"
+import Product from "../../Components/Product/Product"
+
+
+
+
 
 
 const Home = () => {
@@ -8,7 +12,7 @@ const Home = () => {
     <div>
       <Hero></Hero>
       <Bannar></Bannar>
-      <Products></Products>
+      <Product></Product>
     </div>
   )
 }
