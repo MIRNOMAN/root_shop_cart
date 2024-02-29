@@ -1,6 +1,6 @@
-import { IoCart } from "react-icons/io5"
+import { IoCart, IoClose } from "react-icons/io5"
 import { IoMdHeart } from "react-icons/io"
-import { FaRegStar, FaStar, FaStarHalfAlt } from "react-icons/fa"
+import { FaFacebookF, FaInstagram, FaRegStar, FaStar, FaStarHalfAlt, FaTwitter } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
 
@@ -93,6 +93,49 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
                                 <div className="flex items-center gap-1 mt-2">
                                    {RanderRatingStars(rating)}
                                 </div>
+                                {price?.slice(0, 1).map((priceItem, index) => (
+                            <div className="flex items-center mt-3 gap-3" key={index}>
+                                <p className="line-through " >${priceItem.value}</p>
+                                <p className="text-2xl font-semibold  text-primary-green">
+                                    ${(priceItem.value - (priceItem.value * discount) / 100).toFixed(2)}
+                                </p>
+                            </div>
+                        ))}
+                        <p className="text-sm leading-6 mt-2">{description}</p>
+                        <div className="flex items-center mt-3 gap-3">
+                             <input type="text" value="1" className="w-12 h-12 text-primary outline-none border-2 border-primary px-4 " />
+                             <button className="primary-btn">ADD TO CART</button>
+                        </div>
+
+                        <hr className="my-5" />
+                             <div className="flex flex-col gap-4">
+                                <div className="flex items-center gap-3">
+                                   <p className="text-xl font-bold">
+                                    Category : <span className="font-normal"> Wooden product</span>
+                                   </p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                   <p className="text-xl font-bold">
+                                    Tag : <span className="font-normal"> Wooden</span>
+                                   </p>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                   <p className="text-xl font-bold">
+                                    Share : 
+                                   </p>
+                                   <div className="flex items-center mt-1 gap-3">
+                                       <FaFacebookF/>
+                                       <FaInstagram/>
+                                       <FaTwitter/>
+                                   </div>
+                                </div>
+                             </div>
+
+                             <button className="close-btn absolute top-0 right-0 w-12 h-12 flex justify-center items-center bg-primary-green text-white"
+                             onClick={closeModal}
+                             >
+                                <IoClose size={20}/>
+                             </button>
                                 </div>
                             </div>
                         </div>
