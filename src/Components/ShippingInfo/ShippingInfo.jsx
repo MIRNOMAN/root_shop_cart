@@ -52,8 +52,8 @@ const ShippingInfo = () => {
                </div>
                
            </div>
-           <div className="left w-full p-5 px-8 lg:w-1/2 bg-white">
-
+           <div className="left w-full p-5 lg:px-8 lg:w-1/2 bg-white">
+             <input type="text"  className="outline-none w-full "/>
            </div>
        </div>
     </section>
