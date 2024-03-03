@@ -57,7 +57,7 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
                         </button>
                     </div>
                 </div>
-                <div className="details flex items-center flex-col bg-white pb-3 pt-6">
+                <div className="details flex  items-center flex-col bg-white pb-3 pt-6">
                     <NavLink to={`/product-details/${id}`}>
                         <span>{title}</span>
                     </NavLink>

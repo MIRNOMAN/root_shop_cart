@@ -4,6 +4,7 @@ import Hero from "../../Components/Hero/Hero"
 import Product from "../../Components/Product/Product"
 import ProductSlide from "../../Components/ProductSlide/ProductSlide"
 import ShippingInfo from "../../Components/ShippingInfo/ShippingInfo"
+import Testimonials from "../../Components/Testimonials/Testimonials"
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
       <ShippingInfo></ShippingInfo>
       <FreeShipping></FreeShipping>
       <ProductSlide></ProductSlide>
+      <Testimonials></Testimonials>
     </div>
   )
 }
