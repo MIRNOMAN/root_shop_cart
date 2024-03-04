@@ -1,8 +1,12 @@
-
+import Lottie from "lottie-react"
+import errorPage from "../../errorfile.json"
 
 const ErrorPage = () => {
   return (
-    <div>ErrorPage</div>
+    <div>
+                <Lottie className="h-screen" animationData={errorPage}></Lottie>
+
+    </div>
   )
 }
 
