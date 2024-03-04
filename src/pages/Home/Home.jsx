@@ -1,6 +1,7 @@
 import Bannar from "../../Components/Bannar/Bannar"
 import FreeShipping from "../../Components/FreeShipping/FreeShipping"
 import Hero from "../../Components/Hero/Hero"
+import InstagramPost from "../../Components/InstagramPost/InstagramPost"
 import Product from "../../Components/Product/Product"
 import ProductSlide from "../../Components/ProductSlide/ProductSlide"
 import ProductSlideCard from "../../Components/ProductSlide/ProductSlideCard"
@@ -30,6 +31,8 @@ const Home = () => {
         <br />
         <ProductSlideCard/>
       </div>
+
+    <InstagramPost></InstagramPost>
     </div>
   )
 }
