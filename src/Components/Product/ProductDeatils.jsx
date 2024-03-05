@@ -46,13 +46,13 @@ const ProductDeatils = () => {
         <div className="flex justify-between flex-col lg:flex-row" key={productId}>
           <div className="images lg:w-1/2">
             <div>
-              {images.map((image, index) =>(
+              {images.slice(0,1).map((image, index) =>(
                 <img src={image.image} alt=""  key={index} className="w-full h-full"/>
               ))}
             </div>
           </div>
 
-          <div className="details lg:w-1/2 px-16 pt-10">
+          <div className="details lg:w-1/2 px-16 pt-5">
             <button className="feature-btn bg-indigo-600">SALE {discount}% OFF</button>
             <h1 className="text-2xl font-semibold mt-3">{title}</h1>
             <div className="flex items-center gap-2 mt-4 ">
@@ -61,7 +61,8 @@ const ProductDeatils = () => {
               </div>
               <p>{product.rating} Review</p>
             </div>
-            <p className="text-lg font-light mt-3">{description}</p>
+            <p className="text-sm font-light mt-1">{description}</p>
+            
             <br />
 
             <div>
@@ -99,6 +100,7 @@ const ProductDeatils = () => {
              <button className="w-12 h-12 grid place-items-center bg-gray-100 text-primary border border-gray-300">
               <BiMinus size={20}></BiMinus>
              </button>
+             <button className="primary-btn">ADD TO CART</button>
             </div>
 
 
@@ -108,8 +110,43 @@ const ProductDeatils = () => {
                     Add to wishlist
                   </BiHeart>
                 </button>
+                <button className="flex items-center gap-2 secondary-btn">
+                  Compare
+                </button>
             </div>
+            <hr className="my-5" />
+            <label htmlFor="">
+              <span className="text-primary font-bold">SKU : </span>
+              PRT584E63A
+            </label>
+            <br />
+            <label htmlFor="">
+              <span className="text-primary font-bold">Category : </span>
+              PRT584E63A
+            </label>
           </div>
+        </div>
+
+
+        <div className="flex justify-between flex-col lg:flex-row my-7">
+            <div className="lg:w-1/2">
+              <h2 className="text-2xl font-bold ">Fits Your Child</h2>
+              <p className="mt-2 text-sm">
+              Designed for superior child comfort,Onefit provider extra rear-fetching legroom and multiple recline options is every mood of use. With the widest range of height adjusment , the easy adjust headrest system adjusts with the harness to grow with your child, OneFit accommodates timy passenger from the every start with a remove able head and bpdy support insert for newborns weighing 5-11Ib
+            </p>
+            <h2 className="text-2xl font-bold mt-4">Specifications</h2>
+              <p className="mt-2">
+             <span>Assembled Dimensions ( L x W x H ) : 21.5" x 19" x 27"</span><br />
+             <span>Assembled Mode-Product-Facings: 25 lbs </span><br />
+             <span>Harness Mode-Rear-Facings: 40 lbs</span><br />
+             <span>Harness Mode-Forword-Facings: 25 lbs</span><br />
+             <span>Booster Mode-Harness-Facings: 25 lbs</span><br />
+             <span>Booster Mode-Backlessn/a</span><br />
+             <span>Rear facing  child max height capacity 43 in</span><br />
+             <span>Forword-Facing  child max height capacity 54 in</span><br />
+             
+            </p>
+            </div>
         </div>
       </section>
     </>
