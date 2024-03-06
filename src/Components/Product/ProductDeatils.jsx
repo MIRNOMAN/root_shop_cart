@@ -3,6 +3,11 @@ import { productlists } from "../../assets/data/data";
 import { RanderRatingStars } from "../../utils/ProductCards";
 import { useState } from "react";
 import { BiHeart, BiMinus, BiPlus } from "react-icons/bi";
+import ProductSlideCard from "../ProductSlide/ProductSlideCard";
+import { FilterDiscover } from "../InstagramPost/InstagramPost";
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const colorsValue = {
     red: "#fe7fef",
@@ -40,15 +45,39 @@ const ProductDeatils = () => {
   if(!product){
     return <div>Product not Found</div>
   }
+
+
+  const CustomPage = ({index, onClick}) => (
+    <div>
+    <img src={images[index].image} alt="" onClick={onClick} />
+  </div>
+  )
+     
+  
+
+
+
+  const settings = {
+    customPaging: (i) => <CustomPage index={i} />,
+    dots: true,
+    dotsClass: "slick-dots slick-thumb",
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   return (
     <>
       <section className="container mt-16 slideproduct">
         <div className="flex justify-between flex-col lg:flex-row" key={productId}>
           <div className="images lg:w-1/2">
             <div>
-              {images.slice(0,1).map((image, index) =>(
-                <img src={image.image} alt=""  key={index} className="w-full h-full"/>
+              <Slider {...settings}>
+              {images?.map((image, index) =>(
+                <img src={image?.image} alt=""  key={index} className="w-full h-full"/>
               ))}
+              </Slider>
             </div>
           </div>
 
@@ -131,11 +160,11 @@ const ProductDeatils = () => {
         <div className="flex justify-between flex-col lg:flex-row my-7">
             <div className="lg:w-1/2">
               <h2 className="text-2xl font-bold ">Fits Your Child</h2>
-              <p className="mt-2 text-sm">
+              <p className="mt-2 text-base">
               Designed for superior child comfort,Onefit provider extra rear-fetching legroom and multiple recline options is every mood of use. With the widest range of height adjusment , the easy adjust headrest system adjusts with the harness to grow with your child, OneFit accommodates timy passenger from the every start with a remove able head and bpdy support insert for newborns weighing 5-11Ib
             </p>
             <h2 className="text-2xl font-bold mt-4">Specifications</h2>
-              <p className="mt-2">
+             <div className="flex flex-col  mt-2">
              <span>Assembled Dimensions ( L x W x H ) : 21.5" x 19" x 27"</span><br />
              <span>Assembled Mode-Product-Facings: 25 lbs </span><br />
              <span>Harness Mode-Rear-Facings: 40 lbs</span><br />
@@ -144,13 +173,40 @@ const ProductDeatils = () => {
              <span>Booster Mode-Backlessn/a</span><br />
              <span>Rear facing  child max height capacity 43 in</span><br />
              <span>Forword-Facing  child max height capacity 54 in</span><br />
-             
-            </p>
+             </div>
+            </div>
+
+            <div className="lg:w-1/2 grid grid-cols-2 gap-5 lg:px-8 mt-5">
+               <ProductDetailsBox title="All-in-one Car Seat" desc="One car seat that fits your child, vehicle and life from birth through buster" />
+               <ProductDetailsBox title="Space-Saving Design" desc="One car seat that fits your child, vehicle and life from birth through buster" />
+               <ProductDetailsBox title="Easiest to install Correctly" desc="One car seat that fits your child, vehicle and life from birth through buster" />
+               <ProductDetailsBox title="No Added Chemicals" desc="One car seat that fits your child, vehicle and life from birth through buster" />
             </div>
         </div>
+        <h1 className="text-2xl font-bold">Related Products</h1>
+        <ProductSlideCard></ProductSlideCard>
       </section>
+      <br />
+      <FilterDiscover />
     </>
   )
 }
 
 export default ProductDeatils
+
+
+
+
+
+
+export const ProductDetailsBox = ({title, desc}) => {
+  return (
+    <>
+      <div className="flex items-center justify-center flex-col gap-2 text-center bg-gray-100 p-8 lg:p-5">
+          <h2 className="text-xl font-semibold">{title}</h2>
+          <caption className="">{desc}</caption>
+      </div>
+    </>
+  )
+}
+

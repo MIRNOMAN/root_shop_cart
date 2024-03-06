@@ -3,6 +3,8 @@ import { IoMdHeart } from "react-icons/io"
 import { FaFacebookF, FaInstagram, FaRegStar, FaStar, FaStarHalfAlt, FaTwitter } from "react-icons/fa"
 import { NavLink } from "react-router-dom"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { cartActions } from "../redux/slice/cartSlice"
 
 export const RanderRatingStars = (rating) => {
     const totallStars = 5;
@@ -25,6 +27,7 @@ export const RanderRatingStars = (rating) => {
 const ProductCards = ({ id, title, description, images, price, discount, rating, featured, category, color }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const dispatch = useDispatch()
 
     const openModal = () => {
         setIsModalOpen(true);
@@ -32,6 +35,16 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
 
     const closeModal = () => {
         setIsModalOpen(false);
+    }
+
+    const discountPrice = price[0].value - (price[0].value - discount) /100;
+    
+    
+  
+    const addToCart = () =>{
+        dispatch(
+          cartActions.addToCart({id, title, price: discountPrice, images})
+        )
     }
 
 
@@ -49,7 +62,7 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
                     </div>
                     <div className="opacity-0 hover:opacity-100 transition-all duration-300  flex  items-center gap-2 justify-center absolute bottom-0 left-0 right-0 hover:bottom-2  m-5">
                         <button onClick={openModal} className="quick-view-btn product-btn primary-btn">Quick view</button>
-                        <button className="add-to-cart-btn product-btn primary-btn">
+                        <button onClick={addToCart} className="add-to-cart-btn product-btn primary-btn">
                             <IoCart size={23}></IoCart>
                         </button>
                         <button className="love-btn product-btn primary-btn">
