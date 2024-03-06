@@ -10,11 +10,10 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react';
 import logo from "../../assets/common/logo.png"
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import styled from '@emotion/styled';
-import { Badge } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { NavLink } from 'react-router-dom';
+
+import ModelCart from '../../utils/Cart/ModelCart';
 
 
 const Navbar = () => {
@@ -106,14 +105,14 @@ const Navbar = () => {
         setAnchorElUser(null);
     };
 
-    const StyledBadge = styled(Badge)(() => ({
-        '& .MuiBadge-badge': {
-            right: -3,
-            top: 13,
-            //   border: `2px solid ${theme.palette.background.paper}`,
-            padding: '0 4px',
-        },
-    }))
+    // const StyledBadge = styled(Badge)(() => ({
+    //     '& .MuiBadge-badge': {
+    //         right: -3,
+    //         top: 13,
+    //         //   border: `2px solid ${theme.palette.background.paper}`,
+    //         padding: '0 4px',
+    //     },
+    // }))
 
     return (
         <AppBar position="static" >
@@ -187,18 +186,14 @@ const Navbar = () => {
                     <SearchIcon></SearchIcon>
                     </Box>
 
-
-
-                    {/* addCart section */}
-                    <Box sx={{
+                {/* wish list */}
+                <Box sx={{
                         display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
                     }}>
-                        <IconButton aria-label="cart">
-                            <StyledBadge badgeContent={4} className='mr-5' color="secondary">
-                                <ShoppingCartIcon />
-                            </StyledBadge>
-                        </IconButton>
+                          <ModelCart />
                     </Box>
+                
+                    
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton

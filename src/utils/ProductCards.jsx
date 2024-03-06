@@ -37,7 +37,7 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
         setIsModalOpen(false);
     }
 
-    const discountPrice = price[0].value - (price[0].value - discount) /100;
+    const discountPrice = price[0].value - (price[0].value * discount) /100;
     
     
   
