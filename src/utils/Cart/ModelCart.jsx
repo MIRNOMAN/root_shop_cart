@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { IoCartOutline, IoCloseOutline, IoHeartOutline } from "react-icons/io5"
 import { useDispatch, useSelector } from "react-redux";
-import { selectTotalPrice, selectTotalQuantity } from "../../redux/slice/cartSlice";
+import { cartActions, selectTotalPrice, selectTotalQuantity } from "../../redux/slice/cartSlice";
 
 
 const ModelCart = () => {
@@ -53,7 +53,7 @@ const ModelCart = () => {
               
               <>
               <div className="cartoverlay" onClick={closeModal}></div>
-            <div className={`cartmodel p-16 text-primary ${isCloseing ? "closing" : ""}`}>
+            <div className={`cartmodel p-12 text-primary ${isCloseing ? "closing" : ""}`}>
                 <div className="flex justify-between gap-5">
                    <button className={`flex items-center gap-2 font-medium ${activeTab === "cart" ? "text-primary" : ""}`} onClick={() => handleTabChange("cart")}>
                     Shopping Cart 
@@ -117,13 +117,13 @@ export const CartProduct = ({id, cover, name, price, quantity}) => {
     const dispatch = useDispatch();
 
     const removeCartItems = () => {
-        // to do
+        dispatch(cartActions.removeFromAllCart(id))
     }
   return (
     <>
        <div className="mt-5 border-b-2 border-gray-200 pb-5">
          <div className="flex items-center gap-3">
-           <div className="images w-20 h-20">
+           <div className="images w-12 h-12">
               {cover?.slice(0,1).map((image, i) =>(
                  <img src={image?.image} alt="" key={i} className="w-full h-full object-cover"/>
               ))}
@@ -132,8 +132,8 @@ export const CartProduct = ({id, cover, name, price, quantity}) => {
               <h3>{name}</h3>
                <p className="text-primary-green">{quantity} x ${price.toFixed(2)}</p>
            </div>
-           <button className="w-10 h-10 bg-gray-200 flex items-center justify-center rounded-full text-primary">
-            <IoCloseOutline size={25} onClick={removeCartItems} />
+           <button className="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-full text-primary">
+            <IoCloseOutline size={20} onClick={removeCartItems} />
            </button>
          </div>
         </div> 
