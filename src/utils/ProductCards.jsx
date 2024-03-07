@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import { cartActions } from "../redux/slice/cartSlice"
+import { favouriteActions } from "../redux/slice/favouriteSlice"
 
 export const RanderRatingStars = (rating) => {
     const totallStars = 5;
@@ -46,7 +47,13 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
           cartActions.addToCart({id, title, price: discountPrice, images})
         )
     }
-
+    
+    const handleAddToFavourites = () =>{
+        dispatch(
+          favouriteActions.addToFavourites({id, title, price: discountPrice, images})
+        )
+    }
+    
 
     return (
 
@@ -65,7 +72,7 @@ const ProductCards = ({ id, title, description, images, price, discount, rating,
                         <button onClick={addToCart} className="add-to-cart-btn product-btn primary-btn">
                             <IoCart size={23}></IoCart>
                         </button>
-                        <button className="love-btn product-btn primary-btn">
+                        <button onClick={handleAddToFavourites} className="love-btn product-btn primary-btn">
                             <IoMdHeart size={23}></IoMdHeart>
                         </button>
                     </div>
