@@ -6,8 +6,6 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
 import { useState } from 'react';
 import logo from "../../assets/common/logo.png"
 import SearchIcon from '@mui/icons-material/Search';
@@ -18,14 +16,10 @@ import ModelCart from '../../utils/Cart/ModelCart';
 
 const Navbar = () => {
     
-    const settings = <>
-    <li><NavLink to="/profile">Profile</NavLink></li>
-    <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-    <li><NavLink to="/logout">Logout</NavLink></li>
-    </>
+  
 
     const [anchorElNav, setAnchorElNav] = useState(null);
-    const [anchorElUser, setAnchorElUser] = useState(null);
+
 
     const navlinks = <>
      <li>
@@ -93,17 +87,13 @@ const Navbar = () => {
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+ 
 
     const handleCloseNavMenu = () => {
         setAnchorElNav(null);
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
-    };
+   
 
     // const StyledBadge = styled(Badge)(() => ({
     //     '& .MuiBadge-badge': {
@@ -121,7 +111,7 @@ const Navbar = () => {
                     <Box sx={{
                         display: { xs: 'none', md: 'flex' },
                     }}>
-                        <img className='w-[170px]' src={logo} alt="logo" />
+                        <img className='w-[200px]' src={logo} alt="logo" />
                     </Box>
 
 
@@ -167,7 +157,7 @@ const Navbar = () => {
                     <Box sx={{
                         display: { xs: 'block', md: 'none', flexGrow: 1, },
                     }}>
-                        <img className='w-[130px]' src={logo} alt="logo" />
+                        <img className='w-[160px]' src={logo} alt="logo" />
                     </Box>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -194,35 +184,11 @@ const Navbar = () => {
                     </Box>
                 
                     
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
+                    <Box sx={{ flexGrow: 0 }}>  
                             <IconButton
-                                onClick={handleOpenUserMenu}
                                 sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            <ul className='list-none p-4 space-y-3'>
-                            {settings}
-                            </ul>
-                           
-                        </Menu>
+                                <ModelCart />
+                            </IconButton>                      
                     </Box>
                 </Toolbar>
             </Container>
