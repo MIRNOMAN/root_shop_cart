@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 
+
 const colorsValue = {
     red: "#fe7fef",
     yellow: "#ffff00",
@@ -50,6 +51,7 @@ const ProductDeatils = () => {
 
   const CustomPage = ({index, onClick}) => (
     <div>
+      
     <img src={images[index].image} alt="" onClick={onClick} />
   </div>
   )
@@ -74,6 +76,7 @@ const ProductDeatils = () => {
         <div className="flex justify-between flex-col lg:flex-row" key={productId}>
           <div className="images lg:w-1/2">
             <div>
+           
               <Slider {...settings}>
               {images?.map((image, index) =>(
                 <img src={image?.image} alt=""  key={index} className="w-full h-full"/>

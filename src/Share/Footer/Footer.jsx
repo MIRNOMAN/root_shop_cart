@@ -8,7 +8,7 @@ const Footer = () => {
          <div className="container grid-cols-1 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
            <div>
-            <img src={logo} alt="LogoImg" className="h-7" />
+            <img src={logo} alt="LogoImg" className="h-12" />
 
             <div className="flex text-start flex-col gap-2 mt-5">
              <caption className="text-start">Address : 105/3 north,<br /> Jatrabari, Dhaka</caption>

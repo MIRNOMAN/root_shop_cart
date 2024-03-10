@@ -184,7 +184,7 @@ const Navbar = () => {
                     </Box>
                 
                     
-                    <Box sx={{ flexGrow: 0 }}>  
+                    <Box sx={{ flexGrow: 0, display: { xs: 'block', md: 'none', spacing: 4, color: "#212121" } }}>  
                             <IconButton
                                 sx={{ p: 0 }}>
                                 <ModelCart />
