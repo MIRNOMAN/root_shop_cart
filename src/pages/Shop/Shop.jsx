@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { productlists } from "../../assets/data/data"
 import ProductCards from "../../utils/ProductCards"
-
+import { TbCategoryFilled } from "react-icons/tb";
 
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
@@ -18,7 +18,10 @@ const Shop = () => {
     <section className="flex">
     <div className="px-7 ml-12 bg-slate-50 lg:w-1/5 mt-16 ">
      <div className="mt-3">
-      <h1 className="text-center text-lg font-semibold my-3">Categories</h1>
+      <div className="flex items-center justify-center gap-2">
+      <TbCategoryFilled size={20} />
+      <h1 className="text-center text-lg font-semibold my-3"> Categories</h1>
+      </div>
       {productlists?.map((item) => (
         <button key={item.id} 
         onClick={() => handleCategoryClick(item?.title)}

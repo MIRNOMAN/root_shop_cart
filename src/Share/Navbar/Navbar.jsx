@@ -94,16 +94,6 @@ const Navbar = () => {
     };
 
    
-
-    // const StyledBadge = styled(Badge)(() => ({
-    //     '& .MuiBadge-badge': {
-    //         right: -3,
-    //         top: 13,
-    //         //   border: `2px solid ${theme.palette.background.paper}`,
-    //         padding: '0 4px',
-    //     },
-    // }))
-
     return (
         <AppBar position="static" >
             <Container maxWidth="xl" className='bg-[#F4F3F4] shadow-none'>
@@ -113,6 +103,7 @@ const Navbar = () => {
                     }}>
                         <img className='w-[200px]' src={logo} alt="logo" />
                     </Box>
+                    
 
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -126,6 +117,8 @@ const Navbar = () => {
                         >
                             <MenuIcon />
                         </IconButton>
+
+                        
 
                         <Menu
                             id="menu-appbar"
@@ -153,7 +146,11 @@ const Navbar = () => {
 
                         </Menu>
 
+                        
+
                     </Box >
+                   
+                  
                     <Box sx={{
                         display: { xs: 'block', md: 'none', flexGrow: 1, },
                     }}>
@@ -182,6 +179,14 @@ const Navbar = () => {
                     }}>
                           <ModelCart />
                     </Box>
+                  
+                    <Box sx={{
+                        display: { xs: 'none', md: 'flex', },
+                    }}>
+                       <div>
+                        <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="../../../public/images/hero/product1-1.png" alt="Bordered avatar" />
+                       </div>
+                    </Box>
                 
                     
                     <Box sx={{ flexGrow: 0, display: { xs: 'block', md: 'none', spacing: 4, color: "#212121" } }}>  
@@ -189,6 +194,13 @@ const Navbar = () => {
                                 sx={{ p: 0 }}>
                                 <ModelCart />
                             </IconButton>                      
+                    </Box>
+                    <Box sx={{
+                        display: { xs: 'block', md: 'none', flexGrow: 1, },
+                    }}>
+                       <div>
+                        <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/docs/images/people/profile-picture-5.jpg" alt="Bordered avatar" />
+                       </div>
                     </Box>
                 </Toolbar>
             </Container>
