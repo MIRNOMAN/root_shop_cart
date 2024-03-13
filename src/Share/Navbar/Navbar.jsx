@@ -164,15 +164,6 @@ const Navbar = () => {
                        
                     </Box>
 
-
-
-                    {/* search function */}
-                    <Box sx={{
-                        display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
-                    }}>
-                    <SearchIcon></SearchIcon>
-                    </Box>
-
                 {/* wish list */}
                 <Box sx={{
                         display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
@@ -199,7 +190,7 @@ const Navbar = () => {
                         display: { xs: 'block', md: 'none', flexGrow: 1, },
                     }}>
                        <div>
-                        <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/docs/images/people/profile-picture-5.jpg" alt="Bordered avatar" />
+                        <img className="w-7 h-7 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/docs/images/people/profile-picture-5.jpg" alt="Bordered avatar" />
                        </div>
                     </Box>
                 </Toolbar>
