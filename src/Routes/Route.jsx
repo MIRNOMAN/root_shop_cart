@@ -5,7 +5,6 @@ import MainLayout from "../Layout/MainLayout";
 import ErrorPage from "../pages/errorPage/ErrorPage";
 import Home from "../pages/Home/Home";
 import Shop from "../pages/Shop/Shop";
-import Blog from "../pages/Blog/Blog";
 import Services from "../pages/Services/Services";
 import Contacts from "../pages/Contacts/Contacts";
 import About from "../pages/About/About";
@@ -30,10 +29,6 @@ const router = createBrowserRouter([
       {
         path: '/product-details/:productId',
         element: <ProductDeatils></ProductDeatils>,
-      },
-      {
-        path: '/blog',
-        element: <Blog></Blog>,
       },
       {
         path: '/about',

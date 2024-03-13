@@ -8,7 +8,6 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import { useState } from 'react';
 import logo from "../../assets/common/logo.png"
-import SearchIcon from '@mui/icons-material/Search';
 import { NavLink } from 'react-router-dom';
 
 import ModelCart from '../../utils/Cart/ModelCart';
@@ -40,16 +39,6 @@ const Navbar = () => {
   }
 >
   Shop
-</NavLink>
-     </li>
-     <li>
-     <NavLink
-  to="/blog"
-  className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active" : "#009688"
-  }
->
-  Blog
 </NavLink>
      </li>
      <li>
