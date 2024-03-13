@@ -153,6 +153,14 @@ const Navbar = () => {
                        
                     </Box>
 
+                    <Box sx={{
+                        display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
+                    }}>
+                      <div className='mr-6 text-lg'>
+                        <button className='hover:text-blue-600 hover:font-semibold'>Login</button><span>/</span><button className='hover:text-red-600 hover:font-semibold'>Register</button>
+                      </div>
+                    </Box>
+
                 {/* wish list */}
                 <Box sx={{
                         display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
