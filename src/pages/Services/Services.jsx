@@ -13,7 +13,7 @@ const Services = () => {
         <div className="lg:flex justify-between p-4  lg:px-36 py-16">
           <div className="lg:h-96 lg:w-72 border shadow-xl p-6 rounded-lg bg-white">
              <div className="">
-                 <Lottie className="h-[160px]" animationData={communicationlotti}></Lottie>
+                 <Lottie className="h-[160px] object-cover" animationData={communicationlotti}></Lottie>
              </div>
              <div className="mt-3">
              <h1 className="text-xl font-semibold text-center tracking-widest text-[#2E927A]">Communications</h1>
@@ -27,7 +27,7 @@ const Services = () => {
 
           <div className="lg:h-96 lg:w-72 border shadow-xl p-6 rounded-lg bg-white">
              <div className="">
-                 <Lottie className="h-[160px]" animationData={Inspiredlotti}></Lottie>
+                 <Lottie className="h-[160px] object-cover" animationData={Inspiredlotti}></Lottie>
              </div>
              <div className="mt-3">
              <h1 className="text-xl font-semibold text-center tracking-widest text-[#2E927A]">Inspired Design</h1>
@@ -41,7 +41,7 @@ const Services = () => {
 
           <div className="lg:h-96 lg:w-72 border shadow-xl p-6 rounded-lg bg-white">
              <div className="">
-                 <Lottie className="h-[160px]" animationData={Customerslotti}></Lottie>
+                 <Lottie className="h-[160px] object-cover" animationData={Customerslotti}></Lottie>
              </div>
              <div className="mt-3">
              <h1 className="text-xl font-semibold text-center tracking-widest text-[#2E927A]">Happy Customers</h1>
