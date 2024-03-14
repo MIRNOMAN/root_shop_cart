@@ -157,7 +157,9 @@ const Navbar = () => {
                         display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
                     }}>
                       <div className='mr-6 text-lg'>
-                        <button className='hover:text-blue-600 hover:font-semibold'>Login</button><span>/</span><button className='hover:text-red-600 hover:font-semibold'>Register</button>
+                       <NavLink to="/login"> <button className='hover:text-blue-600 hover:font-semibold'>Login</button></NavLink>
+                        <span>/</span>
+                        <NavLink to="/register"><button className='hover:text-red-600 hover:font-semibold'>Register</button></NavLink>
                       </div>
                     </Box>
 
