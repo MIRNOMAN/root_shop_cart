@@ -11,6 +11,8 @@ import logo from "../../assets/common/logo.png"
 import { NavLink } from 'react-router-dom';
 
 import ModelCart from '../../utils/Cart/ModelCart';
+import LoginPage from '../../pages/LoginPage/LoginPage';
+import RegisterPage from '../../pages/RegisterPage/RegisterPage';
 
 
 const Navbar = () => {
@@ -157,9 +159,9 @@ const Navbar = () => {
                         display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
                     }}>
                       <div className='mr-6 text-lg'>
-                       <NavLink to="/login"> <button className='hover:text-blue-600 hover:font-semibold'>Login</button></NavLink>
+                       <LoginPage />
                         <span>/</span>
-                        <NavLink to="/register"><button className='hover:text-red-600 hover:font-semibold'>Register</button></NavLink>
+                      <RegisterPage />
                       </div>
                     </Box>
 
