@@ -15,6 +15,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Autoplay} from 'swiper/modules';
+import { Link } from "react-router-dom"
 
 const Hero = () => {
 
@@ -28,7 +29,7 @@ const Hero = () => {
 
                 <div className=" flex lg:justify-start justify-center lg:gap-8 gap-2 mt-5">
                 <button className="primary-btn uppercase">view deatils</button>
-                <button className="secondary-btn uppercase">view shop</button>
+                <Link to="/shop"><button className="secondary-btn uppercase">view shop</button></Link>
                 </div>
              </div>
         </div>

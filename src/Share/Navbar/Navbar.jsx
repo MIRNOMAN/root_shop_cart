@@ -13,12 +13,13 @@ import { NavLink } from 'react-router-dom';
 import ModelCart from '../../utils/Cart/ModelCart';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import RegisterPage from '../../pages/RegisterPage/RegisterPage';
+import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
     
   
-
+  const {name} = useSelector((state)=> state.userSlice)
     const [anchorElNav, setAnchorElNav] = useState(null);
 
 
@@ -84,6 +85,7 @@ const Navbar = () => {
         setAnchorElNav(null);
     };
 
+    
    
     return (
         <AppBar position="static" >
@@ -158,7 +160,7 @@ const Navbar = () => {
                     <Box sx={{
                         display: { xs: 'none', md: 'flex', spacing: 4, color: "#212121" },
                     }}>
-                      <div className='mr-6 text-lg'>
+                      <div className='mr-6 text-lg flex justify-center items-center'>
                        <LoginPage />
                         <span>/</span>
                       <RegisterPage />
@@ -176,7 +178,7 @@ const Navbar = () => {
                         display: { xs: 'none', md: 'flex', },
                     }}>
                        <div>
-                        <img className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="../../../public/images/hero/product1-1.png" alt="Bordered avatar" />
+                        <h1 className='text-black'>{name}</h1>
                        </div>
                     </Box>
                 

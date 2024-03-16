@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import bannar1 from "../../../public/images/hero/product1-1.png"
 import bannar2 from "../../../public/images/hero/product2.png"
 import bannar3 from "../../../public/images/hero/product3.png"
@@ -13,7 +14,7 @@ const Bannar = () => {
                            <h1 className="text-4xl font-medium">Wooden Water Bottles </h1>
                            <div className="flex justify-around items-center">
                            <span className=" uppercase mt-2 font-medium">Up to 60% off</span>
-                           <button className="secondary-btn mt-2 uppercase"> shop now</button>
+                           <Link to="/shop"><button className="secondary-btn mt-3 uppercase"> shop now</button></Link>
                            </div>
                      </div>
                  </div>
@@ -26,7 +27,7 @@ const Bannar = () => {
                            <span className=" uppercase mt-2 font-medium">Up to 60% off</span>
                            <div className="">
                            
-                           <button className="secondary-btn mt-3 uppercase"> shop now</button>
+                           <Link to="/shop"><button className="secondary-btn mt-3 uppercase"> shop now</button></Link>
                            </div>
                      </div>
                        </div>
@@ -38,7 +39,7 @@ const Bannar = () => {
                            <span className=" uppercase mt-2 font-medium">Up to 60% off</span>
                            <div className="">
                            
-                           <button className="secondary-btn mt-2 uppercase"> shop now</button>
+                           <Link to="/shop"><button className="secondary-btn mt-3 uppercase"> shop now</button></Link>
                            </div>
                      </div>
                        </div>

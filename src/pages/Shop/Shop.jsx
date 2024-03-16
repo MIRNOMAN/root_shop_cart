@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { productlists } from "../../assets/data/data"
 import ProductCards from "../../utils/ProductCards"
 import { TbCategoryFilled } from "react-icons/tb";
@@ -6,6 +6,10 @@ import { TbCategoryFilled } from "react-icons/tb";
 const Shop = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchInput, setSearchInput] = useState("");
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(0);
+
+
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
@@ -23,6 +27,19 @@ const Shop = () => {
         item.title.toLowerCase().includes(searchInput.toLowerCase()))
     );
   });
+
+  useEffect(() => {
+    // Calculate min and max prices when filteredProductLists change
+    if (filteredProductLists.length > 0) {
+      console.log("Filtered Product List:", filteredProductLists);
+      const prices = filteredProductLists?.map(item => item?.price);
+      console.log("Prices:", prices);
+      setMinPrice(Math.min(...prices));
+      setMaxPrice(Math.max(...prices));
+    }
+  }, [filteredProductLists]);
+  
+
   return (
     <>
       <section>
@@ -65,6 +82,7 @@ const Shop = () => {
               ))}
 
             </div>
+            
           </div>
           <div className="px-7 lg:w-4/5 mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {filteredProductLists?.map((item) => (
@@ -86,6 +104,15 @@ const Shop = () => {
             }
           </div>
         </div>
+   {/* range wise price */}
+        <div className="relative mx-52 my-16">
+    <label  className="sr-only">Labels range</label>
+ <input id="labels-range-input" type="range"  min={minPrice} max={maxPrice} className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700" />
+    <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">Min (${minPrice})</span>
+    <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">${(maxPrice - minPrice) / 2}</span>
+    <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-2/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">${maxPrice}</span>
+    <span className="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">Max (${maxPrice})</span>
+</div>
       </section>
     </>
   )
