@@ -8,6 +8,7 @@ import { FilterDiscover } from "../InstagramPost/InstagramPost";
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ReactImageMagnify from "react-image-magnify";
 
 
 
@@ -75,13 +76,27 @@ const ProductDeatils = () => {
       <section className="container mt-16 slideproduct">
         <div className="flex justify-between flex-col lg:flex-row" key={productId}>
           <div className="images lg:w-1/2">
-            <div>
-           
-              <Slider {...settings}>
-              {images?.map((image, index) =>(
-                <img src={image?.image} alt=""  key={index} className="w-full h-full"/>
-              ))}
-              </Slider>
+            <div >
+          <Slider {...settings}>
+          {images?.map((image, index) => (
+                                <ReactImageMagnify  key={index}
+                                    {...{
+                                        smallImage: {
+                                            alt: title,
+                                            src: image.image,
+                                            width: 400,
+                                            height: 400
+                                        },
+                                        largeImage: {
+                                            src: image.image,
+                                            width: 1200,
+                                            height: 1200
+                                        },
+                                       
+                                    }}
+                                />
+                            ))}
+          </Slider>
             </div>
           </div>
 

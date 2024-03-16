@@ -192,9 +192,7 @@ const Navbar = () => {
                     <Box sx={{
                         display: { xs: 'block', md: 'none', flexGrow: 1, },
                     }}>
-                       <div>
-                        <img className="w-7 h-7 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="/docs/images/people/profile-picture-5.jpg" alt="Bordered avatar" />
-                       </div>
+                      
                     </Box>
                 </Toolbar>
             </Container>
