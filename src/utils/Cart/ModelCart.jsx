@@ -65,7 +65,7 @@ const ModelCart = () => {
               
               <>
               <div className="cartoverlay " onClick={closeModal}></div>
-            <div className={`cartmodel p-12 overflow-y-auto text-primary ${isCloseing ? "closing" : ""}`}>
+            <div className={`cartmodel w-[90%] md:w-[35%] lg:w-[35%] p-12 overflow-y-auto text-primary ${isCloseing ? "closing" : ""}`}>
                 <div className="flex justify-between gap-5">
                    <button className={`flex items-center gap-2 font-medium ${activeTab === "cart" ? "text-primary" : ""}`} onClick={() => handleTabChange("cart")}>
                     Shopping Cart 

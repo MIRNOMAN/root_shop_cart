@@ -241,7 +241,7 @@ body {
   position: fixed;
   top: 0;
   right: 0;
-  width: 35%;
+  /* width: 35%; */
   height: 100vh;
   background-color: white;
   z-index: 1000000 !important;
